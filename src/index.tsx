@@ -97,7 +97,7 @@ export default class ImageModal extends React.Component<Props, State> {
     }
   };
 
-  private _open = (): void => {
+  _open = (): void => {
     if (this.props.disabled) return;
 
     this._setOrigin();
@@ -162,14 +162,9 @@ export default class ImageModal extends React.Component<Props, State> {
           renderToHardwareTextureAndroid={renderToHardwareTextureAndroid === false ? false : true}
           style={{ opacity: this._originImageOpacity }}
         >
-          <TouchableOpacity
-            activeOpacity={1}
-            style={{ alignSelf: 'baseline' }}
-            onPress={this._open}
-            onLongPress={onLongPressOriginImage}
-          >
+          <View style={{ alignSelf: 'baseline' }}>
             <FastImage {...this.props} />
-          </TouchableOpacity>
+          </View>
         </Animated.View>
         <ImageDetail
           ref={modalRef}
