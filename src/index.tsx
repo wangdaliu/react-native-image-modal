@@ -1,5 +1,5 @@
 import React, { LegacyRef } from 'react';
-import { Animated, View, TouchableOpacity, StatusBar, Platform, Dimensions } from 'react-native';
+import { Animated, View, StatusBar, Platform, Dimensions } from 'react-native';
 import FastImage from 'react-native-fast-image';
 import type { ResizeMode } from 'react-native-fast-image';
 import type { ImageStyle, FastImageProps } from 'react-native-fast-image';
@@ -138,7 +138,6 @@ export default class ImageModal extends React.Component<Props, State> {
       modalRef,
       modalImageStyle,
       modalImageResizeMode,
-      onLongPressOriginImage,
       renderHeader,
       renderFooter,
       onTap,
@@ -155,7 +154,6 @@ export default class ImageModal extends React.Component<Props, State> {
         ref={(component): void => {
           this._root = component;
         }}
-        onLayout={() => {}}
         style={[{ alignSelf: 'baseline', backgroundColor: imageBackgroundColor }]}
       >
         <Animated.View
